@@ -45,8 +45,9 @@ AiBestie is a **fun, experimental project** I created to practice Python and GUI
 2. **Install dependencies (PySide6, OpenAI)**
 pip install PySide6 openai
 
-3.**Run the GUI:**
+3. **Run the GUI:**
 python main.py
+
 
 Enjoy chatting with your little AI bestie! 💜
 
