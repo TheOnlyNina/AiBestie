@@ -8,7 +8,7 @@ AiBestie is a **fun, experimental project** I created to practice Python and GUI
 
 - **Purpose:** Workshop / personal artwork project to experiment with Python GUIs and playful AI interactions.
 - **Inspiration:** The layout was inspired by my own Figma design.  
-- **Current Status:** Work in progress — I might add more features like bubble backgrounds and an Enter button for sending messages.
+- **Current Status:** Work in progress.
 
 ---
 
