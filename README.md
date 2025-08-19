@@ -34,6 +34,7 @@ AiBestie is a **fun, experimental project** I created to practice Python and GUI
 - Improve the Enter key functionality for sending messages.  
 - Expand AI personality responses for a more natural conversation.
 - Fix the informations, it is written fully in Python and not HTML or TEX.
+- Make it into a .exe application for easier download.
 
 ---
 
