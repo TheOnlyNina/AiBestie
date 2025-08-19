@@ -51,6 +51,10 @@ python main.py
 
 Enjoy chatting with your little AI bestie! 💜
 
+<img width="491" height="726" alt="aibestie" src="https://github.com/user-attachments/assets/1820f3a7-e60d-4886-980e-2a96a3c90ec4" />
+
+
+
 
   
 
