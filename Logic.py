@@ -4,6 +4,9 @@ import random
 import re
 from openai.types.chat import ChatCompletionMessageParam
 import sys
+from datetime import datetime
+import requests
+
 
 class AiBestie:
     def __init__(self):
@@ -67,6 +70,28 @@ class AiBestie:
             return ("I run on OpenAI’s tech, but I’m not a generic bot — I’m AiBestie, your friendly companion 💕")
         return None
 
+    # Weather + Time
+    def _get_current_time(self) -> str:
+        now = datetime.now()
+        return now.strftime("%H:%M %p")
+
+    def _get_weather(self, city: str = "Algiers") -> str:
+        try:
+            api_key = "d3bf06a7194db25350220f2d5eb2ad2c"  #  OpenWeatherMap key 
+            url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric"
+            response = requests.get(url, timeout=5).json()
+            if response.get("weather"):
+                condition = response["weather"][0]["description"]
+                temp = response["main"]["temp"]
+                return f"{condition}, {temp}°C"
+            else:
+                return "Weather unavailable"
+        except Exception:
+            return "Weather unavailable"
+
+    def _context_info(self) -> str:
+        return f"Current time: {self._get_current_time()}, Weather: {self._get_weather()}"
+
     # Personality filter
     def filter_response(self, user_input: str, ai_response: str) -> str:
         response = (ai_response or "").strip()
@@ -110,7 +135,8 @@ class AiBestie:
                 "Speak casually and naturally. Avoid formal greetings unless the user greets first. "
                 "Never say 'I am an AI language model'. "
                 "Be brief (1–3 short sentences). Sprinkle gentle emojis occasionally. "
-                "Use friendly cues naturally, but not every message."
+                "Use friendly cues naturally, but not every message. "
+                f"Here is some live context you can use naturally in conversation: {self._context_info()}"
             )
 
             messages = cast(

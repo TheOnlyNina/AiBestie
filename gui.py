@@ -7,8 +7,9 @@ from PySide6.QtWidgets import QApplication, QWidget, QLineEdit, QVBoxLayout, QSc
 from PySide6.QtGui import QPainter, QPixmap, QFontMetrics, QBrush, QColor, QPainterPath, QFontDatabase, QFont
 from PySide6.QtCore import Qt, QTimer, QUrl, QRect
 from PySide6.QtMultimedia import QSoundEffect
+from PySide6.QtCore import QTimer
 
-from Logic import AiBestie  # ✅ Use your custom personality class
+from Logic import AiBestie  #  your custom personality class
 
 openai.api_key = config.OPENAI_API_KEY
 
@@ -108,7 +109,7 @@ class ChatWindow(QWidget):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("BestieAI")
-        self.resize(500, 600)
+        self.resize(500, int(600 * 1.3))
 
         self.background = load_pixmap("background.jpg")
 
@@ -140,12 +141,14 @@ class ChatWindow(QWidget):
     def add_user_bubble(self, text):
         bubble = ChatBubble(text, "user_icon.png", True)
         self.scroll_layout.addWidget(bubble)
-        self.scroll_area.verticalScrollBar().setValue(self.scroll_area.verticalScrollBar().maximum())
+        QTimer.singleShot(0, lambda: self.scroll_area.verticalScrollBar().setValue(
+        self.scroll_area.verticalScrollBar().maximum()))
 
     def add_ai_bubble(self, text):
         bubble = ChatBubble(text, "ai_icon.png", False)
         self.scroll_layout.addWidget(bubble)
-        self.scroll_area.verticalScrollBar().setValue(self.scroll_area.verticalScrollBar().maximum())
+        QTimer.singleShot(0, lambda: self.scroll_area.verticalScrollBar().setValue(
+        self.scroll_area.verticalScrollBar().maximum()))
 
     def send_message(self):
         text = self.input_box.text().strip()
