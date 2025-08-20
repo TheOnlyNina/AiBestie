@@ -8,7 +8,7 @@ AiBestie is a **fun, experimental project** I created to practice Python and GUI
 
 - **Purpose:** Workshop / personal artwork project to experiment with Python GUIs and playful AI interactions.
 - **Inspiration:** The layout was inspired by my own Figma design.  
-- **Current Status:** Work in progress — I might add more features like bubble backgrounds and an Enter button for sending messages.
+- **Current Status:** Work in progress.
 
 ---
 
@@ -33,6 +33,8 @@ AiBestie is a **fun, experimental project** I created to practice Python and GUI
 - Add backgrounds to message bubbles.  
 - Improve the Enter key functionality for sending messages.  
 - Expand AI personality responses for a more natural conversation.
+- Fix the informations, it is written fully in Python and not HTML or TEX.
+- Make it into a .exe application for easier download.
 
 ---
 
@@ -45,10 +47,15 @@ AiBestie is a **fun, experimental project** I created to practice Python and GUI
 2. **Install dependencies (PySide6, OpenAI)**
 pip install PySide6 openai
 
-3.**Run the GUI:**
+3. **Run the GUI:**
 python main.py
 
+
 Enjoy chatting with your little AI bestie! 💜
+
+<img width="491" height="726" alt="aibestie" src="https://github.com/user-attachments/assets/1820f3a7-e60d-4886-980e-2a96a3c90ec4" />
+
+
 
 
   
