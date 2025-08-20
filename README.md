@@ -24,7 +24,8 @@ AiBestie is a **fun, experimental project** I created to practice Python and GUI
 ## Notes
 
 - The images/icons used in the project **are not owned by me**; they were found on Pinterest.  
-- The font used for the chat interface must be **downloaded and installed** from the web to work correctly.  
+- The font used for the chat interface must be **downloaded and installed** from the web to work correctly.
+- I used my own OpenWeatherMap Token.
 
 ---
 
